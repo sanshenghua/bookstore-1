@@ -8,7 +8,7 @@ import javax.persistence.Temporal;
 import java.util.Date;
 
 @Entity
-public class user {
+public class User {
     @Id
     @GeneratedValue
     private Integer user_id;
@@ -79,12 +79,12 @@ public class user {
         this.state = state;
     }
 
-    public user() {
+    public User() {
     }
 
     @Override
     public String toString() {
-        return "user{" +
+        return "User{" +
                 "user_id=" + user_id +
                 ", user_name='" + user_name + '\'' +
                 ", password='" + password + '\'' +

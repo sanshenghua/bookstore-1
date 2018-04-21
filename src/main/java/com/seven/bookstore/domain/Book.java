@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class book {
+public class Book {
     @Id
     @GeneratedValue
     private Integer book_id;
@@ -17,12 +17,12 @@ public class book {
     private String type;
     private String cover_url;
 
-    public book() {
+    public Book() {
     }
 
     @Override
     public String toString() {
-        return "book{" +
+        return "Book{" +
                 "book_id=" + book_id +
                 ", ISBN='" + ISBN + '\'' +
                 ", title='" + title + '\'' +
