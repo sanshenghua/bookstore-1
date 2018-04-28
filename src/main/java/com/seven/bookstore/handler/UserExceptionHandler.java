@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import sun.net.ProgressSource;
 
 import java.util.HashMap;
 
@@ -22,9 +23,10 @@ public class UserExceptionHandler {
     public HashMap<String,Object> handler(Exception e ){
         if (e instanceof UserException) {
             UserException userException = (UserException) e;
-            return ResponseWrapper.HttpError500(userException.getCode(), userException.getMessage());
+            log.error("catch UserException",e);
+            return ResponseWrapper.HttpError500(userException);
         } else {
-            log.error("System error : {}", e);
+            log.error("System error", e);
             return ResponseWrapper.HttpError500(StateCode.UNKNOWN_ERROR);
         }
     }

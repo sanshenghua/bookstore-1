@@ -3,7 +3,10 @@ package com.seven.bookstore.domain;
 public enum StateCode {
     UNKNOWN_ERROR(-1,"system error"),
     SUCCESS(0,"success"),
-    NoObject(400,"no object")
+    NoUserFindById(1000,"can not find user by this id"),
+
+    HTTP500ERROR(500,"请求参数不对"),
+    HTTP200OK(200,"success")
     ;
 
     private Integer code;
